@@ -1,26 +1,38 @@
 <template>
-  <div class="hello">
+ <!-- ----------------
+    HEADER
+  ---------------- -->
+  <div class="main">
     <h1>{{ msg }}</h1>
 
 
+
+ <!-- ----------------
+    MAIN VISUALISER
+  ---------------- --> `
     <div class="list_container">
+      <!-- List to store all values in the list --> 
       <ul id="example-1">
-      
-      
-      <li v-for="val in num_list" :key="val">
-
-        <div class="list_bar" v-bind:style="{height: val + 'px'}">
-        </div>
-
-
-
-      </li>
+        <li v-for="val in num_list" :key="val">
+          <!-- set the height of the div based on its numerical value --> 
+          <div class="list_bar" v-bind:style="{height: val + 'px'}"></div>
+        </li>
       </ul>
     </div>
+
+
+ <!-- ----------------
+   BUTTONS
+  ---------------- --> 
+  <div >
+    <button class="buttons" @click="resetList()">Generate New Array</button>
+    <button class="buttons" @click="mergeSort()">Merge Sort</button>
+    <button class="buttons" @click="bubbleSort()">Bubble Sort</button>
+
   </div>
 
 
- 
+  </div>
 </template>
 
 <script src="./sorting_vis.js"></script>

@@ -5,18 +5,20 @@ padding: 0;
 }
 li {
 display: inline-block;
-margin: 0 2px;
+margin: 0 1px;
 }
 
-.list_container {
-position: absolute;
-}
+
 
 .list_bar{
 width: 4px;
 background-color: aqua;
 display: inline-block;
-margin: 0 1px;
 
 
+}
+
+
+.buttons{
+    margin: 0 20px;
 }
