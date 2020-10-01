@@ -1,5 +1,5 @@
 <template>
-  <SortingMain msg="Welcome to Your Vue.js App"/>
+  <SortingMain msg="Welcome to my Sorting Algorithm Visualiser"/>
 </template>
 
 <script>
