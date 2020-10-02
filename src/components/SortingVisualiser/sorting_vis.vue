@@ -19,7 +19,6 @@
  
           <div class="list_bar" v-else-if="sorted"  v-bind:style="{height: item.val + 'px', backgroundColor: finalColor}"></div>
 
-
           <div class="list_bar" v-else v-bind:style="{height: item.val + 'px', backgroundColor: startingColor}"></div>
 
         </li>

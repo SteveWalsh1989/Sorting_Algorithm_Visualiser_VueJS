@@ -40,20 +40,15 @@ export default {
             this.temp_list =  this.temp_list.filter(function(elem, index, self) {
                 return index === self.indexOf(elem);
             })
-            console.log("temp list", this.temp_list)
+            
 
             for(let i = 0; i < this.temp_list.length; i++){
                 this.num_list[i] = {id:1, val:1}
                 this.num_list[i].id = this.temp_list[i] * 500 // adding id to try and force refresh dom by changing when swapping values
                 this.num_list[i].val = this.temp_list[i]
 
-                // console.log("this.num_list[i].val",   this.num_list[i].val)
-
-
+                // console.log("this.num_list[i].val",   this.num_list[i].val
             }
-
-            console.log("main list", this.num_list)
-
 
         },
         // generates random in between min and max params 
@@ -65,40 +60,32 @@ export default {
          SORTING ALGORITHMS
         */
        mergeSort(){
-            console.log("Running Merge Sort")
+        console.log("Running Merge Sort")
        },
-       bubbleSort(){
-       
-        var is_sorted = false;
-        var counter = 0;
+       async bubbleSort(){
+            console.log("Running Bubble Sort")
+            var is_sorted = false;
+            var counter = 0;
+          
+            while(!is_sorted){
 
-        while(!is_sorted){
+                is_sorted = true;
 
-            is_sorted = true;
+                for( let i = 0; i < (this.num_list.length - 1 - counter); i++){
+                    // set compared values for coloring
+                    this.compare_val_1 = this.num_list[i].val;
+                    this.compare_val_2 = this.num_list[i +1].val;
+                    await this.sleep(1000)
+                    // check if values need to be swapped
+                    if(this.num_list[i].val > this.num_list[i + 1].val){
+                            
+                        // setTimeout(()=> this.swapNumbersInArray(i, i+1) , 200);
+                        //this.nextTick(this.swapNumbersInArray(i, i+1) )
+                        setTimeout(this.swapNumbersInArray(i, i+1), this.delay*i);
+                        // this.swapNumbersInArray(i, i+1);
 
-            for( let i = 0; i < (this.num_list.length - 1 - counter); i++){
-
-                // set compared values for coloring
-                this.compare_val_1 = this.num_list[i].val;
-                this.compare_val_2 = this.num_list[i +1].val;
-                
-                // check if values need to be swapped
-                if(this.num_list[i].val > this.num_list[i + 1].val){
-                         
-                    // setTimeout(()=> this.swapNumbersInArray(i, i+1) , 200);
-                    //this.nextTick(this.swapNumbersInArray(i, i+1) )
-                    setTimeout(this.swapNumbersInArray(i, i+1), this.delay);
-                    // this.swapNumbersInArray(i, i+1);
-
-                    is_sorted = false;
-                }
-
-
-        
-            
-            
-
-
+                        is_sorted = false;
+                    }
             }
             counter =+ 1  
             
@@ -119,9 +106,15 @@ export default {
         this.num_list[index_1].val = a
         this.num_list[index_1].id =  this.num_list[index_2].id + 1
        },
+       sleep(ms){
+        return new Promise((resolve) => {
+          setTimeout(resolve, ms);
+        });
+      },
+
        
     },
-
+    
     created(){
         // reset list on creation
         this.resetList() 
