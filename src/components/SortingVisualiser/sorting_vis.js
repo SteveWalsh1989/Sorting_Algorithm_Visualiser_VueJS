@@ -20,32 +20,17 @@ export default {
         msg: String
       },
      methods: {
-         // clears and resets the array with new numbers 
-        resetList(){
-            // clear list
-            this.sorted = false;
-            this.num_list = []
-            // populate list with random ints 
-            for(let i = 1; i < this.list_size; i++){
-                this.num_list.push(this.randomIntFromInterval(this.list_min, this.list_max))
-            }
-            // remove duplicates 
-            this.num_list =  this.num_list.filter(function(elem, index, self) {
-                return index === self.indexOf(elem);
-            })
-        },
-        // generates random in between min and max params 
-        randomIntFromInterval(min, max){
-            return Math.floor(Math.random() * ( max - min + 1)) + min
-        },
-        /*
+    
+        /******************
          SORTING ALGORITHMS
-        */
+        *******************/
         async quickSort(){
             this.resetList()
             console.log("Running Quick Sort")
 
             this.quickSortHelper( 0, this.num_list.length-1)
+
+
        },
         async quickSortHelper(start_index, end_index){
             
@@ -97,7 +82,7 @@ export default {
                 this.quickSortHelper(start_index, right_index - 1)
             }
 
-
+           
         },
         async bubbleSort(){
             console.log("Running Bubble Sort")
@@ -119,18 +104,60 @@ export default {
             counter =+ 1  
             }
         this.sorted = true; // changes color to finalColor
-       },
-       // swaps two values positions with each other 
-       swapNumbersInArray(index_1, index_2){
-        var a = this.num_list[index_2]
-        this.num_list[index_2] = this.num_list[index_1]
-        this.num_list[index_1] = a
-       },
-       sleep(ms){
-        return new Promise((resolve) => {
-          setTimeout(resolve, ms);
-        });
-      },
+        },
+        async insertionSort(){
+
+            for(let i = 1; i < this.num_list.length; i++){
+
+                // initialise number trying to insert
+                var trying_num = i;
+
+                // highlight value trying to insert 
+                this.compare_val_1 = trying_num;
+
+                // main insertion sort logic
+                while( trying_num > 0 && this.num_list[trying_num] < this.num_list[trying_num-1]){
+                    this.swapNumbersInArray(trying_num, trying_num-1)
+                    await this.sleep(5) // short delay so user can see the animation
+                }
+
+                this.sorted = true; // changes color to finalColor
+            }
+
+        },
+         /******************
+           OTHER FUNCTIONS
+          *******************/
+        // clears and resets the array with new numbers 
+        resetList(){
+            // clear list
+            this.sorted = false;
+            this.num_list = []
+            // populate list with random ints 
+            for(let i = 1; i < this.list_size; i++){
+                this.num_list.push(this.randomIntFromInterval(this.list_min, this.list_max))
+            }
+            // remove duplicates 
+            this.num_list =  this.num_list.filter(function(elem, index, self) {
+                return index === self.indexOf(elem);
+            })
+        },
+        // generates random in between min and max params 
+        randomIntFromInterval(min, max){
+            return Math.floor(Math.random() * ( max - min + 1)) + min
+        },
+
+        // swaps two values positions with each other 
+        swapNumbersInArray(index_1, index_2){
+            var a = this.num_list[index_2]
+            this.num_list[index_2] = this.num_list[index_1]
+            this.num_list[index_1] = a
+        },
+        sleep(ms){
+            return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+            });
+        },
 
        
     },

@@ -14,6 +14,7 @@
       <li class="header-btns"><button class="buttons" @click="resetList()">Generate New Array</button></li>
       <li class="header-btns"><button class="buttons" @click="bubbleSort()">Bubble Sort</button></li>
       <li class="header-btns"><button class="buttons" @click="quickSort()">Quick Sort</button></li>
+      <li class="header-btns"><button class="buttons" @click="insertionSort()">Insertion Sort</button></li>
 
     </ul>
   </div>
