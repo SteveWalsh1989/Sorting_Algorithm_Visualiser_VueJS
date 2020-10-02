@@ -1,5 +1,8 @@
 # sorting_visualiser
 
+![Sorting Algorithm Visualiser](app-image.png)
+
+
 A small project to display how different sorting algorithms work visually. 
 
 
