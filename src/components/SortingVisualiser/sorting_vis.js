@@ -41,10 +41,10 @@ export default {
         /*
          SORTING ALGORITHMS
         */
-        quickSort(){
-            console.log("Running Merge Sort")
+        async quickSort(){
+            console.log("Running Quick Sort")
 
-            this.quickSortHelper(this.num_list, 0, this.num_list.length -1)
+            this.quickSortHelper( 0, this.num_list.length-1)
        },
         async quickSortHelper(start_index, end_index){
             
