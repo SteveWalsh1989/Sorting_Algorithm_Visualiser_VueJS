@@ -75,15 +75,15 @@ export default {
                     // set compared values for coloring
                     this.compare_val_1 = this.num_list[i].val;
                     this.compare_val_2 = this.num_list[i +1].val;
-                    await this.sleep(1000)
+                    
                     // check if values need to be swapped
                     if(this.num_list[i].val > this.num_list[i + 1].val){
                             
                         // setTimeout(()=> this.swapNumbersInArray(i, i+1) , 200);
                         //this.nextTick(this.swapNumbersInArray(i, i+1) )
-                        setTimeout(this.swapNumbersInArray(i, i+1), this.delay*i);
+                        this.swapNumbersInArray(i, i+1)
                         // this.swapNumbersInArray(i, i+1);
-
+                        await this.sleep(100)
                         is_sorted = false;
                     }
             }
