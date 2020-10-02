@@ -14,8 +14,11 @@
       <!-- List to store all values in the list --> 
       <ul id="example-1">
         <li v-for="val in num_list" :key="val">
-          <!-- set the height of the div based on its numerical value --> 
-          <div class="list_bar" v-bind:style="{height: val + 'px'}"></div>
+          <!-- set the height of the div based on its numerical value -->
+          <div class="list_bar" v-if="val === index_compare_val_1 || val === index_compare_val_2"  v-bind:style="{height: val + 'px', backgroundColor: activeColor}"></div>
+ 
+          <div class="list_bar" v-else v-bind:style="{height: val + 'px', backgroundColor: startingColor}"></div>
+
         </li>
       </ul>
     </div>
@@ -28,7 +31,6 @@
     <button class="buttons" @click="resetList()">Generate New Array</button>
     <button class="buttons" @click="mergeSort()">Merge Sort</button>
     <button class="buttons" @click="bubbleSort()">Bubble Sort</button>
-
   </div>
 
 

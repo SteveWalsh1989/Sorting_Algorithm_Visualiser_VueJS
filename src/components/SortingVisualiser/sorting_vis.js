@@ -6,6 +6,10 @@ export default {
         list_size: 150,
         list_min:2,
         list_max: 500,
+        index_compare_val_1: 0,
+        index_compare_val_2:0 ,
+        startingColor: 'aque',
+        activeColor: 'red',
 
 
      }),
@@ -52,8 +56,17 @@ export default {
             is_sorted = true;
 
             for( let i = 0; i < (this.num_list.length - 1 - counter); i++){
+
+                // set compared values for coloring
+                this.index_compare_val_1 = this.num_list[i]
+                this.index_compare_val_2 = this.num_list[i +1]
+
+
+                // check if values need to be swapped
                 if(this.num_list[i] > this.num_list[i + 1]){
+                
                     this.swapNumbersInArray(i, i+1)
+
                     is_sorted = false;
                 }
             }
@@ -65,12 +78,14 @@ export default {
 
        },
        // swaps two values positions with each other 
-       swapNumbersInArray(num1, num2){
-        var a = this.num_list[num1] 
-        this.num_list[num1] =  this.num_list[num2]
-        this.num_list[num2] = a
-       }
+       swapNumbersInArray(index_1, index_2){
+        var a = this.num_list[index_2] 
+        this.num_list.splice(index_2, 1, this.num_list[index_1] );
+        this.num_list.splice(index_1, 1, a );
 
+     
+       },
+       
     },
 
     created(){
