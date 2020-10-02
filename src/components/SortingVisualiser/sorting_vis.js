@@ -42,6 +42,7 @@ export default {
          SORTING ALGORITHMS
         */
         async quickSort(){
+            this.resetList()
             console.log("Running Quick Sort")
 
             this.quickSortHelper( 0, this.num_list.length-1)
@@ -84,7 +85,7 @@ export default {
             }
 
             this.swapNumbersInArray(pivot_index, right_index)
-            await this.sleep(5)
+            await this.sleep(250)
             // start work on the smaller array
             var left_list_is_smaller = right_index - 1 - start_index < end_index - (right_index + 1)
 
