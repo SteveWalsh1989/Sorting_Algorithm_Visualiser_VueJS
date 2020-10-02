@@ -1,5 +1,5 @@
 <template>
-  <SortingMain msg="Welcome to my Sorting Algorithm Visualiser"/>
+  <SortingMain msg="Sorting Algorithm Visualiser"/>
 </template>
 
 <script>
