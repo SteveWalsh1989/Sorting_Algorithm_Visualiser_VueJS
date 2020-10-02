@@ -10,7 +10,7 @@ export default {
             val: 0,
         }],
         delay: 1000,
-        list_size: 16,
+        list_size: 60,
         list_min:2,
         list_max: 500,
         compare_val_1: 0,
@@ -83,16 +83,16 @@ export default {
                         //this.nextTick(this.swapNumbersInArray(i, i+1) )
                         this.swapNumbersInArray(i, i+1)
                         // this.swapNumbersInArray(i, i+1);
-                        await this.sleep(100)
+                        await this.sleep(5)
                         is_sorted = false;
                     }
             }
             counter =+ 1  
             
-            this.sorted = true;
+           
         }
 
-      
+        this.sorted = true;
 
        },
        // swaps two values positions with each other 
