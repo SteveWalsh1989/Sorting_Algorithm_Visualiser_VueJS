@@ -28,7 +28,7 @@ export default {
 
             // clear list
             this.temp_list = []
-
+            this.num_list = []
             // populate list with random ints
             for(let i = 1; i < this.list_size; i++){
                 this.temp_list.push(this.randomIntFromInterval(this.list_min, this.list_max))
@@ -38,7 +38,7 @@ export default {
             })
             console.log("temp list", this.temp_list)
 
-            for(let i = 0; i < this.list_size; i++){
+            for(let i = 0; i < this.temp_list.length; i++){
                 this.num_list[i] = {id:1, val:1}
                 this.num_list[i].id = this.temp_list[i] * 500
                 this.num_list[i].val = this.temp_list[i]
