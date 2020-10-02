@@ -8,7 +8,8 @@ export default {
             id :0, 
             val: 0,
         }],
-        list_size: 150,
+        delay: 100000,
+        list_size: 16,
         list_min:2,
         list_max: 500,
         compare_val_1: 0,
@@ -40,7 +41,7 @@ export default {
 
             for(let i = 0; i < this.temp_list.length; i++){
                 this.num_list[i] = {id:1, val:1}
-                this.num_list[i].id = this.temp_list[i] * 500
+                this.num_list[i].id = this.temp_list[i] * 500 // adding id to try and force refresh dom by changing when swapping values
                 this.num_list[i].val = this.temp_list[i]
 
                 // console.log("this.num_list[i].val",   this.num_list[i].val)
@@ -77,16 +78,13 @@ export default {
                 // set compared values for coloring
                 this.compare_val_1 = this.num_list[i].val;
                 this.compare_val_2 = this.num_list[i +1].val;
-             
-
-               
-                   
+                
                 // check if values need to be swapped
                 if(this.num_list[i].val > this.num_list[i + 1].val){
-                                
+                         
                     // setTimeout(()=> this.swapNumbersInArray(i, i+1) , 200);
-                    this.swapNumbersInArray(i, i+1);
-
+                    //this.nextTick(this.swapNumbersInArray(i, i+1) )
+                    this.setTimeout(this.swapNumbersInArray(i, i+1), this.delay);
                     is_sorted = false;
                 }
 
