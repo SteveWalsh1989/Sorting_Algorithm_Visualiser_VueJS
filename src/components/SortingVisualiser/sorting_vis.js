@@ -3,12 +3,13 @@
 export default {
 
      data :() => ({
+        sorted: false,
         temp_list : [],
         num_list: [{
             id :0, 
             val: 0,
         }],
-        delay: 100000,
+        delay: 1000,
         list_size: 16,
         list_min:2,
         list_max: 500,
@@ -16,6 +17,7 @@ export default {
         compare_val_2:0 ,
         startingColor: 'aqua',
         activeColor: 'red',
+        finalColor: 'purple',
 
 
      }),
@@ -28,6 +30,7 @@ export default {
         resetList(){
 
             // clear list
+            this.sorted = false;
             this.temp_list = []
             this.num_list = []
             // populate list with random ints
@@ -84,7 +87,9 @@ export default {
                          
                     // setTimeout(()=> this.swapNumbersInArray(i, i+1) , 200);
                     //this.nextTick(this.swapNumbersInArray(i, i+1) )
-                    this.setTimeout(this.swapNumbersInArray(i, i+1), this.delay);
+                    setTimeout(this.swapNumbersInArray(i, i+1), this.delay);
+                    // this.swapNumbersInArray(i, i+1);
+
                     is_sorted = false;
                 }
 
@@ -95,7 +100,9 @@ export default {
 
 
             }
-            counter =+ 1   
+            counter =+ 1  
+            
+            this.sorted = true;
         }
 
       

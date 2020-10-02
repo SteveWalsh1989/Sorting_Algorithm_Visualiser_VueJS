@@ -15,8 +15,11 @@
       <transition-group id="example-1" tag="ul">
         <li v-for="item in num_list" :key="item.id">
           <!-- set the height of the div based on its numerical value -->
-          <div class="list_bar" v-if="item.val === compare_val_1 || item.val === compare_val_2"  v-bind:style="{height: item.val + 'px', backgroundColor: activeColor}"></div>
+          <div class="list_bar" v-if="item.val === compare_val_1 || item.val === compare_val_2 && !sorted"  v-bind:style="{height: item.val + 'px', backgroundColor: activeColor}"></div>
  
+          <div class="list_bar" v-else-if="sorted"  v-bind:style="{height: item.val + 'px', backgroundColor: finalColor}"></div>
+
+
           <div class="list_bar" v-else v-bind:style="{height: item.val + 'px', backgroundColor: startingColor}"></div>
 
         </li>
