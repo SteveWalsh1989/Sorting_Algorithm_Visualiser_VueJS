@@ -11,13 +11,13 @@ Checklist
 - [x] Write bubble sort for testing
 - [x] Connect algo to UI
 - [x] Animate steps 
-- [ ] Merge Sort
+- [x] Upgrade UI to have main buttons in header
 - [x] Insertion sort 
 - [x] Quick Sort
+- [ ] Merge Sort
 - [ ] Selection Sort
 - [ ] Allow user to change Array size 
 - [ ] Allow user to change Speed up / Slow time transitions
-- [x] Upgrade UI to have main buttons in header
 - [ ] Section with info about easy algo
 
 ## Project setup
