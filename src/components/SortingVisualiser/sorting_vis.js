@@ -15,6 +15,7 @@ export default {
         starting_color: 'aqua',
         active_color: 'red',
         final_color: 'purple',
+        algorithm_details: '',
      }),
      props: {
         msg: String
@@ -25,7 +26,11 @@ export default {
          SORTING ALGORITHMS
         *******************/
         async quickSort(){
+            // reset list 
             this.resetList()
+
+            // set title and details 
+            this.algorithm_details = "Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays,  according to whether they are less than or greater than the pivot.  \n  The sub-arrays are then sorted recursively."
             console.log("Running Quick Sort")
 
             this.quickSortHelper( 0, this.num_list.length-1)
@@ -85,6 +90,7 @@ export default {
            
         },
         async bubbleSort(){
+            this.algorithm_details = " Bubble Sort is a simple sorting algorithm that swaps adjacent elements in the array if the value is lower than its predecessor. \n It will keep iterating until there are no more adjacent values are lower than the value preceding it confirming the array is then sorted. ";
             console.log("Running Bubble Sort")
             var is_sorted = false;
             var counter = 0;
@@ -106,6 +112,15 @@ export default {
         this.sorted = true; // changes color to finalColor
         },
         async insertionSort(){
+
+             // reset list 
+             this.resetList()
+
+             // set title and details 
+             this.algorithm_details = "Insertion Sort is a simple sorting algrithm that virtually splits the array into sorted and unsorted secctions and then one at  a time will move values from the unsorted array into their correct [osition within the sorted array. \n It is not as efficent sorting algorithm when dealing with large datasets as other sorting algorithms. "
+             console.log("Running Insertion Sort")
+
+
 
             for(let i = 1; i < this.num_list.length; i++){
 

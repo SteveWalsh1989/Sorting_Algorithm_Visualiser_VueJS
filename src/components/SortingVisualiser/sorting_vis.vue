@@ -6,7 +6,7 @@
    
 
 <!-- ----------------
-   BUTTONS
+   HEADER
   ---------------- --> 
   <div >
     <ul class="header">
@@ -15,11 +15,16 @@
       <li class="header-btns"><button class="buttons" @click="bubbleSort()">Bubble Sort</button></li>
       <li class="header-btns"><button class="buttons" @click="quickSort()">Quick Sort</button></li>
       <li class="header-btns"><button class="buttons" @click="insertionSort()">Insertion Sort</button></li>
-
     </ul>
   </div>
 
 
+ <!-- ----------------
+   ALGO DETAILS
+  ---------------- --> 
+ <div class = "algorithm_information">
+    <p class="algorithm_details">{{algorithm_details}}</p>     
+ </div>
 
  <!-- ----------------
     MAIN VISUALISER
