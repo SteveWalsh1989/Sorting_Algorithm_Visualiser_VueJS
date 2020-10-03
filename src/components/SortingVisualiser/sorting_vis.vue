@@ -20,7 +20,6 @@
   </div>
 
 
-  </div>
 
  <!-- ----------------
     MAIN VISUALISER
@@ -41,7 +40,7 @@
     </div>
 
 
- 
+ </div>
 </template>
 
 <script src="./sorting_vis.js"></script>

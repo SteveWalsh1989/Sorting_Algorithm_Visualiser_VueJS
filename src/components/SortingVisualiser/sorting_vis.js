@@ -6,7 +6,7 @@ export default {
         sorted: false,
         num_list: [],
         delay: 1000,
-        list_size: 60,
+        list_size: 100,
         list_min:2,
         list_max: 500,
         compare_val_1: 0,

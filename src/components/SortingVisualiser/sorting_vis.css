@@ -18,6 +18,9 @@ display: inline-block;
 
 }
 
+.list_container{
+    margin-top: 15vh;
+}
 
 .buttons{
     margin: 20px;
@@ -28,6 +31,12 @@ display: inline-block;
     color: black;
     padding: 10px;
 }
+
+.buttons:hover {
+    background-color: rgba(221, 214, 215, 0.062);
+    color: white; 
+    border: 1px solid white;
+  }
 
 
 .header{
