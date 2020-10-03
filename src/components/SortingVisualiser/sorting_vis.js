@@ -6,7 +6,7 @@ export default {
         sorted: false,
         num_list: [],
         delay: 1000,
-        list_size: 100,
+        list_size: 80,
         list_min:2,
         list_max: 500,
         compare_val_1: 0,
@@ -90,7 +90,7 @@ export default {
            
         },
         async bubbleSort(){
-            this.algorithm_details = " Bubble Sort is a simple sorting algorithm that swaps adjacent elements in the array if the value is lower than its predecessor. \n It will keep iterating until there are no more adjacent values are lower than the value preceding it confirming the array is then sorted. ";
+            this.algorithm_details = "Bubble Sort is a simple sorting algorithm that swaps adjacent elements in the array if the value is lower than its predecessor. \n It will keep iterating until there are no more adjacent values are lower than the value preceding it confirming the array is then sorted. ";
             console.log("Running Bubble Sort")
             var is_sorted = false;
             var counter = 0;
