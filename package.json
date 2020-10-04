@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0-0"
+    "vue": "^3.0.0-0",
+    "vue-slider-component": "^3.2.5"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",

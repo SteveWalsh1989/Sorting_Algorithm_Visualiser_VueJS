@@ -16,6 +16,7 @@ export default {
         active_color: 'red',
         final_color: 'purple',
         algorithm_details: '',
+        speed_slider_val: 0,
      }),
      props: {
         msg: String
@@ -103,7 +104,7 @@ export default {
                     // check if values need to be swapped
                     if(this.num_list[i] > this.num_list[i + 1]){
                         this.swapNumbersInArray(i, i+1)
-                        await this.sleep(5) // short delay so user can see the animation
+                        await this.sleep(20) // short delay so user can see the animation
                         is_sorted = false;
                     }
             }
@@ -131,7 +132,7 @@ export default {
                 // main insertion sort logic
                 while( trying_num > 0 && this.num_list[trying_num] < this.num_list[trying_num-1]){
                     this.swapNumbersInArray(trying_num, trying_num-1)
-                    await this.sleep(5) // short delay so user can see the animation
+                    await this.sleep(20) // short delay so user can see the animation
                     trying_num -= 1;
                 }  
             }
@@ -212,6 +213,7 @@ export default {
         this.resetList() 
 
     },
+ 
 
 
   }

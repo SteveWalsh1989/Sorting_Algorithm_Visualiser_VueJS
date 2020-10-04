@@ -17,11 +17,12 @@ Checklist
 - [x] Upgrade UI to have main buttons in header
 - [x] Insertion sort 
 - [x] Quick Sort
+- [x] Section with info about easy algo
+- [x] Selection Sort
 - [ ] Merge Sort
-- [ ] Selection Sort
 - [ ] Allow user to change Array size 
 - [ ] Allow user to change Speed up / Slow time transitions
-- [ ] Section with info about easy algo
+
 
 ## Project setup
 ```
