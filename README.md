@@ -2,6 +2,7 @@
 
 ![Sorting Algorithm Visualiser](app-image.png)
 
+![Sorting Algorithm Visualiser](app-gif.gif)
 
 A small project to display how different sorting algorithms work visually. 
 
