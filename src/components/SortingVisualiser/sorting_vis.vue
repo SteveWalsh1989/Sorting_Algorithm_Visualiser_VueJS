@@ -35,7 +35,7 @@
           <ul>
             <li v-for="val in num_list" :key="val">
               <!-- set the height of the div based on its numerical value -->
-              <div class="list_bar" v-if="val === compare_val_1 || val === compare_val_2 && !sorted"  v-bind:style="{height: val + 'px', backgroundColor: active_color}"></div>
+              <div class="list_bar" v-if="(val === compare_val_1 || val === compare_val_2) && !sorted"  v-bind:style="{height: val + 'px', backgroundColor: active_color}"></div>
     
               <div class="list_bar" v-else-if="sorted"  v-bind:style="{height: val + 'px', backgroundColor: final_color}"></div>
 

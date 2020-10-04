@@ -6,7 +6,7 @@ export default {
         sorted: false,
         num_list: [],
         delay: 1000,
-        list_size: 80,
+        list_size: 75,
         list_min:2,
         list_max: 500,
         compare_val_1: 0,
@@ -114,13 +114,11 @@ export default {
         async insertionSort(){
 
              // reset list 
-             this.resetList()
+            // this.resetList()
 
-             // set title and details 
-             this.algorithm_details = "Insertion Sort is a simple sorting algrithm that virtually splits the array into sorted and unsorted secctions and then one at  a time will move values from the unsorted array into their correct [osition within the sorted array. \n It is not as efficent sorting algorithm when dealing with large datasets as other sorting algorithms. "
-             console.log("Running Insertion Sort")
-
-
+            // set title and details 
+            this.algorithm_details = "Insertion Sort is a simple sorting algrithm that virtually splits the array into sorted and unsorted secctions and then one at  a time will move values from the unsorted array into their correct [osition within the sorted array. \n It is not as efficent sorting algorithm when dealing with large datasets as other sorting algorithms. "
+            console.log("Running Insertion Sort")
 
             for(let i = 1; i < this.num_list.length; i++){
 
@@ -128,16 +126,18 @@ export default {
                 var trying_num = i;
 
                 // highlight value trying to insert 
-                this.compare_val_1 = trying_num;
+                this.pivot_index = trying_num;
 
                 // main insertion sort logic
                 while( trying_num > 0 && this.num_list[trying_num] < this.num_list[trying_num-1]){
                     this.swapNumbersInArray(trying_num, trying_num-1)
                     await this.sleep(5) // short delay so user can see the animation
+                    trying_num -= 1;
                 }
 
-                this.sorted = true; // changes color to finalColor
+               
             }
+            this.sorted = true; // changes color to finalColor
 
         },
          /******************
