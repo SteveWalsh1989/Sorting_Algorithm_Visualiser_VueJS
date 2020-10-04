@@ -1,6 +1,5 @@
 # sorting_visualiser
 
-![Sorting Algorithm Visualiser](app-image.png)
 
 ![Sorting Algorithm Visualiser](app-gif.gif)
 
