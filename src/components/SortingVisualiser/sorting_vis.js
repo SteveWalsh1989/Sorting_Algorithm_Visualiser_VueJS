@@ -113,8 +113,8 @@ export default {
         },
         async insertionSort(){
 
-             // reset list 
-            // this.resetList()
+            // reset list 
+            this.resetList()
 
             // set title and details 
             this.algorithm_details = "Insertion Sort is a simple sorting algrithm that virtually splits the array into sorted and unsorted secctions and then one at  a time will move values from the unsorted array into their correct [osition within the sorted array. \n It is not as efficent sorting algorithm when dealing with large datasets as other sorting algorithms. "
@@ -133,12 +133,42 @@ export default {
                     this.swapNumbersInArray(trying_num, trying_num-1)
                     await this.sleep(5) // short delay so user can see the animation
                     trying_num -= 1;
-                }
-
-               
+                }  
             }
             this.sorted = true; // changes color to finalColor
 
+        },
+        async selectionSort(){
+            // reset list 
+            this.resetList()
+
+            // set algo details 
+            this.algorithm_details = "Selection Sorts splits an array into two sub arrays of sorted and unsorted. It then inserts the lowest value from the unsorted array to the sorted until it contains a fully sorted array.";
+            console.log("Running Selection Sort")
+
+            // track first num in unsorted sub list
+            var current_index = 0;
+
+            // coloring
+            this.compare_val_1 = current_index
+
+            while( current_index < (this.num_list.length - 1)){
+                // locate index of smallest num
+                var smallext_index = current_index;
+
+                // iterate over unsorted list
+                for( let i = (current_index + 1); i < this.num_list.length; i++){
+                    if( this.num_list[smallext_index] > this.num_list[i]){
+                        smallext_index = i;
+                    }
+                }
+                // swap smallest num with current index 
+                this.swapNumbersInArray(current_index, smallext_index)
+                await this.sleep(100)
+                current_index +=1
+            }
+
+            this.sorted = true; // changes color to finalColor
         },
          /******************
            OTHER FUNCTIONS

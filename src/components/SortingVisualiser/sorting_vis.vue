@@ -15,6 +15,8 @@
       <li class="header-btns"><button class="buttons" @click="bubbleSort()">Bubble Sort</button></li>
       <li class="header-btns"><button class="buttons" @click="quickSort()">Quick Sort</button></li>
       <li class="header-btns"><button class="buttons" @click="insertionSort()">Insertion Sort</button></li>
+      <li class="header-btns"><button class="buttons" @click="selectionSort()">Selection Sort</button></li>
+
     </ul>
   </div>
 
